@@ -1,0 +1,12 @@
+{
+  "name": "Prayers and Blessings",
+  "short_name": "Prayers",
+  "description": "Daily prayers and blessings for peace, healing, strength, and hope.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#C9A96E",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
