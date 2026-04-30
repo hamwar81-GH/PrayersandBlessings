@@ -98,9 +98,7 @@ export default function SitemapPage() {
                 {section.links.map((link) => (
                   <li key={link.href} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <span style={{ color: '#C9A96E', fontSize: '0.7rem' }}>✦</span>
-                    <Link href={link.href} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.88rem', color: '#3A3A3A', textDecoration: 'none', transition: 'color 0.2s' }}
-                      onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#C9A96E'; }}
-                      onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#3A3A3A'; }}>
+                    <Link href={link.href} className="hover-text-gold" style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.88rem', color: '#3A3A3A', textDecoration: 'none', transition: 'color 0.2s' }}>
                       {link.label}
                     </Link>
                   </li>

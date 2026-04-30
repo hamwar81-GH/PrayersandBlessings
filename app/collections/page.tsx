@@ -39,9 +39,7 @@ export default function CollectionsPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {collections.map((col) => (
             <Link key={col.href} href={col.href} style={{ textDecoration: 'none' }}>
-              <article style={{ background: '#FAF7F2', border: '1px solid rgba(201,169,110,0.15)', borderRadius: '24px', padding: '2rem', transition: 'all 0.3s ease', position: 'relative', overflow: 'hidden' }}
-                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(31,31,31,0.1)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              <article className="hover-lift-md" style={{ background: '#FAF7F2', border: '1px solid rgba(201,169,110,0.15)', borderRadius: '24px', padding: '2rem', transition: 'all 0.3s ease', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', background: 'rgba(201,169,110,0.12)', color: '#C9A96E', borderRadius: '999px', padding: '0.2rem 0.85rem', fontFamily: 'Manrope, sans-serif', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.06em' }}>{col.tag}</div>
                 <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{col.icon}</div>
                 <div style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.72rem', color: '#C9A96E', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.6rem', textTransform: 'uppercase' }}>{col.count}</div>

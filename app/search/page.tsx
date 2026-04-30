@@ -67,9 +67,7 @@ export default function SearchPage({ searchParams }: { searchParams: { q?: strin
                 { label: 'Collections', href: '/collections', icon: '📚' },
                 { label: 'Guides', href: '/guides', icon: '📖' },
               ].map((c) => (
-                <Link key={c.href} href={c.href} style={{ textDecoration: 'none', background: '#FAF7F2', border: '1px solid rgba(201,169,110,0.15)', borderRadius: '16px', padding: '1.25rem', display: 'flex', gap: '0.75rem', alignItems: 'center', transition: 'all 0.2s' }}
-                  onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.boxShadow = '0 4px 20px rgba(31,31,31,0.08)'; }}
-                  onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.boxShadow = 'none'; }}>
+                <Link key={c.href} href={c.href} className="hover-shadow-soft" style={{ textDecoration: 'none', background: '#FAF7F2', border: '1px solid rgba(201,169,110,0.15)', borderRadius: '16px', padding: '1.25rem', display: 'flex', gap: '0.75rem', alignItems: 'center', transition: 'all 0.2s' }}>
                   <span style={{ fontSize: '1.5rem' }}>{c.icon}</span>
                   <span style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.1rem', fontWeight: 500, color: '#1F1F1F' }}>{c.label}</span>
                 </Link>

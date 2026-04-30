@@ -40,9 +40,7 @@ export default function BlessingsPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1.5rem' }}>
           {blessingCategories.map((cat) => (
             <Link key={cat.href} href={cat.href} style={{ textDecoration: 'none' }}>
-              <article style={{ background: '#FAF7F2', border: '1px solid rgba(201,169,110,0.15)', borderRadius: '20px', padding: '1.75rem', transition: 'all 0.3s ease' }}
-                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(31,31,31,0.08)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              <article className="hover-lift-sm" style={{ background: '#FAF7F2', border: '1px solid rgba(201,169,110,0.15)', borderRadius: '20px', padding: '1.75rem', transition: 'all 0.3s ease' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{cat.icon}</div>
                 <div style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.72rem', color: '#C9A96E', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.5rem', textTransform: 'uppercase' }}>{cat.count}</div>
                 <h2 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.3rem', fontWeight: 500, color: '#1F1F1F', marginBottom: '0.6rem' }}>{cat.title}</h2>

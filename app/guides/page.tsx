@@ -39,9 +39,7 @@ export default function GuidesPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
           {guides.map((guide) => (
             <Link key={guide.href} href={guide.href} style={{ textDecoration: 'none' }}>
-              <article style={{ background: '#FAF7F2', border: '1px solid rgba(201,169,110,0.15)', borderRadius: '20px', padding: '1.75rem', transition: 'all 0.3s ease', position: 'relative' }}
-                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(31,31,31,0.08)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              <article className="hover-lift-sm" style={{ background: '#FAF7F2', border: '1px solid rgba(201,169,110,0.15)', borderRadius: '20px', padding: '1.75rem', transition: 'all 0.3s ease', position: 'relative' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
                   <div style={{ fontSize: '2rem' }}>{guide.icon}</div>
                   <div style={{ background: 'rgba(201,169,110,0.1)', color: '#C9A96E', borderRadius: '999px', padding: '0.2rem 0.75rem', fontFamily: 'Manrope, sans-serif', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.06em' }}>{guide.tag}</div>

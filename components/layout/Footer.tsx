@@ -60,6 +60,7 @@ export default function Footer() {
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {socialLinks.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                  className="footer-social-hover"
                   style={{
                     width: '38px', height: '38px',
                     background: 'rgba(201,169,110,0.15)',
@@ -67,8 +68,6 @@ export default function Footer() {
                     borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
                     textDecoration: 'none', fontSize: '1rem', transition: 'all 0.2s ease',
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(201,169,110,0.3)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(201,169,110,0.15)'; }}
                 >{s.icon}</a>
               ))}
             </div>
@@ -81,15 +80,13 @@ export default function Footer() {
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 {links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} style={{
+                    <Link href={link.href} className="hover-text-gold" style={{
                       fontFamily: 'Manrope, sans-serif',
                       fontSize: '0.83rem',
                       color: 'rgba(250,247,242,0.65)',
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#C9A96E'; }}
-                    onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = 'rgba(250,247,242,0.65)'; }}
                     >{link.label}</Link>
                   </li>
                 ))}
@@ -128,9 +125,8 @@ export default function Footer() {
               { label: 'DMCA', href: '/dmca' },
             ].map((l) => (
               <Link key={l.href} href={l.href}
+                className="hover-text-gold"
                 style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.78rem', color: 'rgba(250,247,242,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#C9A96E'; }}
-                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = 'rgba(250,247,242,0.4)'; }}
               >{l.label}</Link>
             ))}
           </div>

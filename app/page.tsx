@@ -180,7 +180,7 @@ export default function HomePage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
           {topicCards.map((card) => (
             <Link key={card.href} href={card.href} style={{ textDecoration: 'none' }}>
-              <article style={{
+              <article className="hover-lift-md" style={{
                 background: card.color,
                 border: '1px solid rgba(201,169,110,0.12)',
                 borderRadius: '20px',
@@ -189,16 +189,6 @@ export default function HomePage() {
                 cursor: 'pointer',
                 height: '100%',
               }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget;
-                  el.style.transform = 'translateY(-4px)';
-                  el.style.boxShadow = '0 12px 40px rgba(31,31,31,0.1)';
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget;
-                  el.style.transform = 'translateY(0)';
-                  el.style.boxShadow = 'none';
-                }}
               >
                 <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>{card.icon}</div>
                 <h3 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.35rem', fontWeight: 500, color: '#1F1F1F', marginBottom: '0.6rem' }}>{card.title}</h3>
@@ -230,7 +220,7 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
             {collections.map((col) => (
               <Link key={col.href} href={col.href} style={{ textDecoration: 'none' }}>
-                <article style={{
+                <article className="hover-lift-sm" style={{
                   background: '#FAF7F2',
                   border: '1px solid rgba(201,169,110,0.15)',
                   borderRadius: '20px',
@@ -239,8 +229,6 @@ export default function HomePage() {
                   position: 'relative',
                   overflow: 'hidden',
                 }}
-                  onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(31,31,31,0.08)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
                   <div style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(201,169,110,0.12)', color: '#C9A96E', borderRadius: '999px', padding: '0.2rem 0.75rem', fontFamily: 'Manrope, sans-serif', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.06em' }}>
                     {col.tag}
@@ -286,10 +274,7 @@ export default function HomePage() {
                 <span style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.72rem', color: '#9B9B9B' }}>{article.readTime}</span>
               </div>
               <h3 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.3rem', fontWeight: 500, color: '#1F1F1F', marginBottom: '0.6rem', lineHeight: 1.3 }}>
-                <Link href={article.href} style={{ color: '#1F1F1F', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#C9A96E'; }}
-                  onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.color = '#1F1F1F'; }}
-                >{article.title}</Link>
+                <Link href={article.href} className="hover-text-gold" style={{ color: '#1F1F1F', textDecoration: 'none', transition: 'color 0.2s' }}>{article.title}</Link>
               </h3>
               <p style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.85rem', color: '#6B6B6B', lineHeight: 1.65, marginBottom: '1rem' }}>{article.excerpt}</p>
               <Link href={article.href} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.82rem', fontWeight: 600, color: '#C9A96E', textDecoration: 'none' }}>

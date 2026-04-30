@@ -139,3 +139,26 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-gold-dark, #A8854E);
   transform: translateY(-2px);
 }
+
+/* Server-safe hover effects formerly handled with inline mouse events. */
+.hover-lift-sm:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(31,31,31,0.08);
+}
+
+.hover-lift-md:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(31,31,31,0.1);
+}
+
+.hover-shadow-soft:hover {
+  box-shadow: 0 4px 20px rgba(31,31,31,0.08);
+}
+
+.hover-text-gold:hover {
+  color: #C9A96E !important;
+}
+
+.footer-social-hover:hover {
+  background: rgba(201,169,110,0.3) !important;
+}
