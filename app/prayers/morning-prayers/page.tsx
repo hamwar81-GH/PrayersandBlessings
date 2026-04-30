@@ -90,9 +90,9 @@ export default function MorningPrayersPage() {
               { label: 'Gratitude Prayers', href: '/prayers/gratitude-prayers' },
               { label: 'Family Blessings', href: '/blessings/family-blessings' },
               { label: 'Prayers for Strength', href: '/prayers/prayers-for-strength' },
-            ].map((l) => (
+            ].map((l: { label: string; href: string }) => ( // Fix: keep the related-link item properties scoped to the map iterator.
               <Link key={l.href} href={l.href} style={{ fontFamily: 'Manrope, sans-serif', fontSize: '0.83rem', fontWeight: 500, color: '#C9A96E', background: 'rgba(201,169,110,0.1)', padding: '0.4rem 1rem', borderRadius: '999px', textDecoration: 'none', border: '1px solid rgba(201,169,110,0.2)', transition: 'all 0.2s' }}>
-                {label}
+                {l.label}{/* Fix: reference the mapped object's label instead of an undefined label variable. */}
               </Link>
             ))}
           </div>
